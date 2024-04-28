@@ -1,0 +1,13 @@
+e7bed7f4024bbc29cae4cd64fedc8342 *DESCRIPTION
+0839158ef079ee2e0680db6ed52cc404 *LICENSE
+9b0bf05c86e02d2ba9393954e246d54a *NAMESPACE
+4fee8562572f9fa290ad5323292a3362 *NEWS.md
+cab642396c082af85166086835e5940c *R/aaa.R
+9c51470d111b683d9fd6578cabf2c493 *R/rcrypto.R
+67dd2053e4cb075369541851327d34aa *man/rcrypto.Rd
+7491aa7fc2e18031800e34837e1ffa58 *src/Makevars
+255d9b93d964de7fbe5a0e74c1d38bac *src/Makevars.win
+4b60483da3041fc544493a1bad51dde4 *src/init.c
+a3b333639c77bb24b438d27b7004fd79 *src/rcrypto.c
+02d1403e91c55a5b15b098f7d4d2875a *tests/testthat.R
+96ed0278d62769ec72d4fdb3b46e1970 *tests/testthat/test-generate.R
