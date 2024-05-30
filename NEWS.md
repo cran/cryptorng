@@ -1,5 +1,14 @@
 
-# cryptorng 0.1.1  2024-04-28
+# cryptorng 0.1.3  2024-05-25
+
+* `rcrypto()` now supports more return types:
+    * `raw` raw vector of bytes
+    * `chr` hexadecimal string
+    * `lgl` random logical values
+    * `int` uniform random integers
+    * `dbl` uniform random doubles in the range [0, 1]
+
+# cryptorng 0.1.2  2024-04-28
 
 * Fixes for CRAN
     * Reintroduce `()` for functions in `DESCRIPTION`
