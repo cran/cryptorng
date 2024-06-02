@@ -1,4 +1,8 @@
 
+# cryptorng 0.1.4 2024-05-31
+
+* Fix mis-specified function declarations picked up by CRAN LTO checks
+
 # cryptorng 0.1.3  2024-05-25
 
 * `rcrypto()` now supports more return types:
@@ -6,7 +10,7 @@
     * `chr` hexadecimal string
     * `lgl` random logical values
     * `int` uniform random integers
-    * `dbl` uniform random doubles in the range [0, 1]
+    * `dbl` uniform random doubles in the range [0, 1)
 
 # cryptorng 0.1.2  2024-04-28
 

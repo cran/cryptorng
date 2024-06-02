@@ -94,7 +94,7 @@ void rcrypto(void *buf, size_t n) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Get random bytes from the system RNG  (R Callable)
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SEXP rcrypto_raw_(SEXP n_, SEXP type_) {
+SEXP rcrypto_raw_(SEXP n_) {
   
   if (asInteger(n_) <= 0) {
     error("rcrypto_(): 'n' must be a positive integer");
@@ -113,7 +113,7 @@ SEXP rcrypto_raw_(SEXP n_, SEXP type_) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Get random bytes from the system RNG as hexadecimal string
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SEXP rcrypto_chr_(SEXP n_, SEXP type_) {
+SEXP rcrypto_chr_(SEXP n_) {
   
   if (asInteger(n_) <= 0) {
     error("rcrypto_(): 'n' must be a positive integer");
@@ -142,7 +142,7 @@ SEXP rcrypto_chr_(SEXP n_, SEXP type_) {
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Get random bytes from the system RNG  as logical values
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-SEXP rcrypto_lgl_(SEXP n_, SEXP type_) {
+SEXP rcrypto_lgl_(SEXP n_) {
   
   if (asInteger(n_) <= 0) {
     error("rcrypto_(): 'n' must be a positive integer");
@@ -202,7 +202,7 @@ SEXP rcrypto_int_(SEXP n_) {
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Get random floats in the range [0, 1]
+// Get random floats in the range [0, 1)
 //
 // @param n_ number of floats
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,7 +218,7 @@ SEXP rcrypto_dbl_(SEXP n_) {
   
   rcrypto((void *)dptr, n * sizeof(double));
   
-  // Convert 64-bit unsigned integer to double in range [0, 1]
+  // Convert 64-bit unsigned integer to double in range [0, 1)
   // Like xoroshiro does: https://prng.di.unimi.it/
   for (size_t i = 0; i < n; i++) {
     dptr[i] = (double)(iptr[i] >> 11) * 0x1.0p-53;
